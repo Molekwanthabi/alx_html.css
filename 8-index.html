@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headphones Landing Page</title>
+    <link rel="stylesheet" href="holberton_school-icon/style.css">
+    <link rel="stylesheet" href="8-index.html"> 
+    <link rel="stylesheet" href="8-script.js"> 
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="top-nav">
+                <div class="logo">
+                    <img src="./CSS-headphones/logo_headphones.png" alt="Headphones Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">what we do</a></li>
+                    <li><a href="#">our results</a></li>
+                    <li><a href="#">contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="hero-content">
+                <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
+                <p>Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+                <a href="#" class="button">CALL TO ACTION</a>
+                <div class="p2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <section class="what-we-do">
+        <div class="container">
+            <h2>What we do...</h2>
+            <p class="section-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+
+            <div class="services">
+                <div class="service">
+                    <i class="holberton_school-icon-ic_soundwave"></i>
+                    <h3>Lorem ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+                <div class="service">
+                    <i class="holberton_school-icon-ic_video"></i>
+                    <h3>Lorem ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+                <div class="service">
+                    <i class="holberton_school-icon-ic_music"></i>
+                    <h3>Lorem ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+                <div class="service">
+                    <i class="holberton_school-icon-ic_hearing"></i>
+                    <h3>Lorem ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            <div>
+                <section class="our-results">
+                  <div class="container">
+                  <h2>Our results speak for themselves</h2>
+                  <p class="section-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                  </div>
+            <div class="CSS-headphones">
+                   <img src="./CSS-headphones/pentagone.png" alt="pentagon">
+                   <img src="./CSS-headphones/pentagone.png" alt="pentagone">
+                   <img src="./CSS-headphones/pentagone.png" alt="pentagone">
+                   <img src="./CSS-headphones/pentagone.png" alt="pentagon">
+            </div>
+        </section>
+        
+        <section class="contact-us">
+        <div class="container">
+            <div class="contact-form">
+                <h1>Contact us</h1>
+
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+
+                    <button type="submit">CALL TO ACTION</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<script>
+        
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+    
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                alert(Thank you, ${name}! Your message has been sent successfully.);
+                
+                contactForm.reset();
+            
+                const button = document.querySelector('.form-button');
+                button.textContent = 'Message Sent!';
+                button.style.backgroundColor = '#4CAF50';
+                
+                setTimeout(() => {
+                    button.textContent = 'Send Message';
+                    button.style.backgroundColor = '';
+                }, 2000);
+            }
+        });
+        
+        const formGroups = document.querySelectorAll('.form-group');
+        formGroups.forEach(group => {
+            const input = group.querySelector('input, textarea');
+            
+            input.addEventListener('focus', () => {
+                group.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    group.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./CSS-headphones/logo_headphones.png" alt="Headphones Logo">
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="holberton_school-icon-ic_facebook"></i></a>
+                    <a href="#"><i class="holberton_school-icon-ic_twitter"></i></a>
+                    <a href="#"><i class="holberton_school-icon-ic_instagram"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                ©Headphones 2020
+            </div>
+        </div>
+    </footer>
+
+
+         <nav>
+            <div class="holberton_school-icon-menu"></div>
+        
+            <div class="hamburger">
+                <div class="line"></div>
+            </div>
+        </nav>
+
+
+
+</body>
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> b539932 (Addeded index.html to directory)
