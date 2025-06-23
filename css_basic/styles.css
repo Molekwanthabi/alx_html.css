@@ -1,0 +1,73 @@
+/* Step 1: Make body a flex container with vertical direction */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+}
+
+body.works_on_smartphone main {
+  flex-direction: column;
+}
+
+/* Step 2: Make main a flex container with horizontal direction */
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto; /* Allow it to grow and fill available space */
+}
+
+/* Step 3: Distribute widths — 2 parts to article, 1 part to aside */
+article {
+  flex: 2;
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  padding: 1rem;
+  background-color: #f5f5f5;
+}
+
+aside {
+  flex: 1;
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  padding: 1rem;
+  background-color: #e0e0e0;
+}
+
+/* Simple styling for header and footer */
+header, footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Optional: Add height control for testing scrolling behavior */
+article, aside {
+  min-height: 0; /* Ensures flexbox overflow-y works correctly in some browsers */
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+article {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.logo {
+  font-size: 2rem;
+  margin-right: 20px;
+}
+article h2 {
+  color: #0077cc;
+  font-family: 'Courier New', monospace;
+}
+
+article p {
+  line-height: 1.6;
+}
+
